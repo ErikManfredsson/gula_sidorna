@@ -18,6 +18,10 @@ public class GUI {
 	private JLabel headerLabel;
 	private JLabel statusLabel;
 	private JPanel controlPanel;
+	
+	public GUI() {
+		GUI();
+	}
 
 	public void GUI() {
 		mainFrame = new JFrame("Contact Book");
