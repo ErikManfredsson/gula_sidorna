@@ -8,7 +8,8 @@ public class LoadSave{
 
     public ContactBook Load()
 	{
-		try {
+        try 
+        {
 			Gson gson = new Gson();
 			return gson.fromJson(new FileReader(path), ContactBook.class);
 		}
