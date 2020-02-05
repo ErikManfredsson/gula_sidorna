@@ -1,10 +1,14 @@
+package GulaSidor.GulaSidor;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
+
 import com.google.gson.Gson;
 
 public class LoadSave{
 
-	private String path = "Contacts.json";
+    private String path = "Contacts.json";
+    Person person;
 
     public ContactBook Load()
 	{
