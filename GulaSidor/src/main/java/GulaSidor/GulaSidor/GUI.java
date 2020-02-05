@@ -45,6 +45,7 @@ public class GUI {
 
 	private void eventDemo() {
 		headerLabel.setText("headerLabel setText");
+		
 		JButton chooseButton = new JButton("Choose");
 		JButton addButton = new JButton("Add");
 		JButton searchButton = new JButton("Search");
@@ -71,23 +72,25 @@ public class GUI {
 
 	private class ButtonClickListener implements ActionListener {
 
+		
+		
 		public void actionPerformed(ActionEvent e) {
 
 			String command = e.getActionCommand();
 
 			if (command.equals("Choose")) {
-				System.out.println("Du tryckte Choose");
+				statusLabel.setText("Du tryckte Choose");
 			} else if (command.equals("Add")) {
-				System.out.println("Du tryckte Add");
+				statusLabel.setText("Du tryckte Add");
 			} else if (command.equals("Search")) {
-				System.out.println("Du tryckte Search");
+				statusLabel.setText("Du tryckte Search");
 			} else if (command.equals("Remove")) {
-				System.out.println("Du tryckte Remove");
+				statusLabel.setText("Du tryckte Remove");
 			}
 		}
 	}
 	public static void main(String[] args) {
 		GUI gui = new GUI();
-		gui.GUI();
+		gui.eventDemo();
 	}
 }
