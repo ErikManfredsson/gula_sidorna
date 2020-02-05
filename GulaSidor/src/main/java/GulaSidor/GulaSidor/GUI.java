@@ -1,5 +1,6 @@
 package GulaSidor.GulaSidor;
 
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -7,10 +8,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 public class GUI {
 
@@ -18,6 +22,7 @@ public class GUI {
 	private JLabel headerLabel;
 	private JLabel statusLabel;
 	private JPanel controlPanel;
+	private DefaultListModel defaultListModel;
 	
 	public GUI() {
 		GUI();
@@ -27,7 +32,55 @@ public class GUI {
 		mainFrame = new JFrame("Contact Book");
 		mainFrame.setSize(400, 600);
 		mainFrame.setLayout(new GridLayout(4, 1));
+		
+		DefaultListModel <String> defaultListModel = new DefaultListModel<String>();
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Peter 031-1337");
+		defaultListModel.addElement("Simon 031-112");
+		
+		
+		JList<String> list = new JList<String>(defaultListModel);
+		list.setLayoutOrientation(JList.VERTICAL);
+		list.setVisibleRowCount(-1);
+		JScrollPane listScroller = new JScrollPane(list);
+		listScroller.setPreferredSize(new Dimension(250, 80));
+		list.setBounds(100, 100, 75, 75);
+		mainFrame.add(listScroller);
 
+	
 		headerLabel = new JLabel("headerLabel new JLabel", JLabel.CENTER);
 		statusLabel = new JLabel("statusLabel new JLabel", JLabel.CENTER);
 		statusLabel.setSize(300, 100);
