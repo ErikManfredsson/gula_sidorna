@@ -1,7 +1,8 @@
-package GulaSidor.GulaSidor; 
+package GulaSidor.GulaSidor;
 
-public class AddRemoveSearchTest {
+import junit.framework.TestCase;
 
-    
-    
+public class AddRemoveSearchTest extends TestCase {
+
+	
 }
