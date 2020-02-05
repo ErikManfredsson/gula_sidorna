@@ -1,7 +1,6 @@
 package GulaSidor.GulaSidor;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ContactBook {
     
@@ -11,9 +10,6 @@ public class ContactBook {
     public ContactBook() {
         LoadSave ls = new LoadSave(); 
         
-        p = ls.Load();
+        p = ls.Load().p;
     }
-
-    
-
 }
