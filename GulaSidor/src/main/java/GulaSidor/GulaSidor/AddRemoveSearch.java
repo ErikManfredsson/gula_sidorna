@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class AddRemoveSearch {
 
-    ContactBook cb = new ContactBook(null, null); 
+    ContactBook cb = new ContactBook(); 
     public ArrayList<Person> foundpeople = new ArrayList<Person>(); 
 
  //     Lägger till en ny person i listan    
