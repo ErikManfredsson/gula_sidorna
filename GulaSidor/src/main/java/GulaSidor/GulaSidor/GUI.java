@@ -34,7 +34,7 @@ public class GUI {
 		mainFrame.setLayout(new GridLayout(4, 1));
 		
 		DefaultListModel <String> defaultListModel = new DefaultListModel<String>();
-		defaultListModel.addElement("Erik 0768765118");
+		defaultListModel.addElement("Erik 0768765118")
 		defaultListModel.addElement("Peter 031-1337");
 		defaultListModel.addElement("Simon 031-112");
 		defaultListModel.addElement("Erik 0768765118");
