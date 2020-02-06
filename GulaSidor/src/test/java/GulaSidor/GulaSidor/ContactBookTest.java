@@ -1,18 +1,26 @@
 package GulaSidor.GulaSidor;
 
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import junit.framework.TestCase;
-
-public class ContactBookTest extends TestCase {
+public class ContactBookTest {
 	
-//	ContactBook cb = new ContactBook(); 
+	private Person person; 
+	private ContactBook contactBook;
 	
-	
+	@BeforeEach 
+	public void addPerson() {
+	person = new Person("Simon Södergren", "0721641288"); 
+	contactBook = new ContactBook(); 
+	}
 	@Test
-	public void personIsSamePerson() {
-	//ContactBook cb1 = new ContactBook("Simon Södergren", "0721641288"), cb2 = new ContactBook("Simon Södergren", "0721641288"); 
-	//assertTrue(cb1.equals(cb2));
+	public void testContactBook() {
+	contactBook.p.add(person); 
+	assertEquals("Simon Södergren", "0721641288", person); 
+		
 	}
 
 }
+
