@@ -77,7 +77,7 @@ public class GUI {
 		defaultListModel.addElement("Peter 031-1337");
 		defaultListModel.addElement("Simon 031-112");
 		
-		image = new ImageIcon("C:\\Users\\Ereko\\eclipse-workspace\\gula_sidorna\\GulaSidor\\eniro.jpg");
+		image = new ImageIcon("src\\main\\java\\GulaSidor\\GulaSidor\\eniro.jpg");
 		JLabel label = new JLabel("", image, JLabel.CENTER);
 		JPanel panel = new JPanel(new BorderLayout());
 		panel.add(label, BorderLayout.CENTER);
