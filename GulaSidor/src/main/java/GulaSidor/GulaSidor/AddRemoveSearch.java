@@ -20,12 +20,16 @@ public class AddRemoveSearch {
                 tempcounter ++;
             else
                 tempname[tempcounter] += a.charAt(i); 
-        }
-        //Person newPerson = new Person(); 
-        //newPerson.name=a;
-        //newPerson.number=b; 
-        //cb.p.add(newPerson); 
-    }
+        } 
+        Person person = new Person();
+        person.fname = tempname[0];
+        person.lname = tempname[1];
+        person.number = b;
+        cb.p.add(person); 
+        System.out.println(cb.p.get(cb.p.size()-1).fname + " " + cb.p.get(cb.p.size()-1).lname + " lades till");
+        LoadSave ls = new LoadSave(); 
+        ls.Save(cb);
+    }    
 //      Går igenom ArrayList och om det matchar namn eller nummer så raderas den 
 public void Remove(String a, String b) {
     String[] tempname = {"", ""};
