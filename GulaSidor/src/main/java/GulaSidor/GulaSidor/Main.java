@@ -9,10 +9,10 @@ public class Main {
         book = ls.Load();
 
         AddRemoveSearch ars = new AddRemoveSearch(book);
-        ars.Search("Logan", "");
+        ars.Search("Logansson", "");
 
         for (int i = 0; i < ars.foundpeople.size(); i++) {
-            System.out.println("Found: "+ ars.foundpeople.get(i).lname + " " + ars.foundpeople.get(i).number);
+            System.out.println("Found: "+ ars.foundpeople.get(i).fname + " " + ars.foundpeople.get(i).lname + " " + ars.foundpeople.get(i).number);
         }
     }
 }
