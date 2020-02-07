@@ -28,7 +28,7 @@ public class GUI {
 	private JLabel headerLabel;
 	private JLabel statusLabel;
 	private JPanel controlPanel;
-	private DefaultListModel defaultListModel;
+	private DefaultListModel<String> defaultListModel = new DefaultListModel<String>();
 	private JTextField textFieldName;
 	private JTextField textFieldNumber;
 	private ImageIcon image;
@@ -48,7 +48,7 @@ public class GUI {
 		textFieldName = new JTextField("Sök efter namn...");
 		textFieldNumber = new JTextField("Sök efter telefonnummer...");
 
-		DefaultListModel<String> defaultListModel = new DefaultListModel<String>();
+		defaultListModel = new DefaultListModel<String>();
 
 		for (int j = 0; j < cb.p.size(); j++) {
 			defaultListModel.addElement(cb.p.get(j).fname + " " + cb.p.get(j).lname + " " + cb.p.get(j).number);
@@ -168,10 +168,17 @@ public class GUI {
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				System.out.println("Du tryckte add");
+
+				AddRemoveSearch ars = new AddRemoveSearch(cb);
+
+				ars.Add(textFieldName.getText(), textFieldNumber.getText());
 			}
 		});
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+
+				defaultListModel.clear();
+
 
 				AddRemoveSearch ars = new AddRemoveSearch(cb);
 
@@ -182,11 +189,20 @@ public class GUI {
 				ars.Search(textFieldName.getText(), textFieldNumber.getText());
 
 				System.out.println(ars.foundpeople.size());
+
+				for (int j = 0; j < ars.foundpeople.size(); j++) {
+
+					defaultListModel.addElement(ars.foundpeople.get(j).fname + " " + ars.foundpeople.get(j).lname + " " + ars.foundpeople.get(j).number);
+				}
 			}
 		});
 		removeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				System.out.println("Du tryckte remove");
+
+				AddRemoveSearch ars = new AddRemoveSearch(cb);
+
+				ars.Remove(textFieldName.getText(), textFieldNumber.getText());
 			}
 		});
 
