@@ -49,7 +49,7 @@ public class GUI {
 		DefaultListModel <String> defaultListModel = new DefaultListModel<String>();
 
 		for (int j = 0; j < cb.p.size(); j++) {
-			defaultListModel.addElement(cb.p.get(j).name + " " + cb.p.get(j).number); 
+			defaultListModel.addElement(cb.p.get(j).fname + " " + cb.p.get(j).lname + " " + cb.p.get(j).number); 
 		}
 
 		image = new ImageIcon("src\\main\\java\\GulaSidor\\GulaSidor\\eniro.jpg");
