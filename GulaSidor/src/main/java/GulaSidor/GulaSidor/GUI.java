@@ -29,8 +29,13 @@ public class GUI {
 	private JTextField textFieldName;
 	private JTextField textFieldNumber;
 	private ImageIcon image;
+	private ContactBook cb = new ContactBook();
+	AddRemoveSearch ars = new AddRemoveSearch(cb);
 
 	public GUI() {
+
+		LoadSave ls = new LoadSave();
+        cb = ls.Load();
 		GUI();
 	}
 
@@ -42,42 +47,6 @@ public class GUI {
 		textFieldNumber = new JTextField("Sök efter telefonnummer...");
 		
 		DefaultListModel <String> defaultListModel = new DefaultListModel<String>();
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
-		defaultListModel.addElement("Erik 0768765118");
-		defaultListModel.addElement("Peter 031-1337");
-		defaultListModel.addElement("Simon 031-112");
 		
 		image = new ImageIcon("src\\main\\java\\GulaSidor\\GulaSidor\\eniro.jpg");
 		JLabel label = new JLabel("", image, JLabel.CENTER);
@@ -185,6 +154,15 @@ public class GUI {
 	searchButton.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent event) {
 			System.out.println("Du tryckte search");
+			ars.Search(textFieldName.getText() , textFieldNumber.getText());
+
+			System.out.println(ars.foundpeople.size());
+
+			for (int i = 0; i < ars.foundpeople.size() ; i++) {
+				//defaultListModel.addElement(ars.foundpeople.get(i).name + " " + ars.foundpeople.get(i).number); 
+				//System.out.println(ars.foundpeople.get(i).name + " " + ars.foundpeople.get(i).number);
+				System.out.println("hello world");
+			}
 		}
 	});
 	removeButton.addActionListener(new ActionListener() {
@@ -197,7 +175,11 @@ public class GUI {
 	}
 
 	public static void main(String[] args) {
+
+
 		GUI gui = new GUI();
 		gui.eventDemo();
+
+
 	}
 }

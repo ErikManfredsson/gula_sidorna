@@ -63,9 +63,9 @@ public class RandomizeContacts
             p.add(person);
         }
 
-        for (int i = 0; i < 500; i++) {
+       /* for (int i = 0; i < 500; i++) {
             System.out.println(p.get(i).name + ": " + p.get(i).number);
-        }
+        }*/
 
     }
 }

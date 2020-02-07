@@ -7,6 +7,11 @@ public class AddRemoveSearch {
     ContactBook cb = new ContactBook(); 
     public ArrayList<Person> foundpeople = new ArrayList<Person>(); 
 
+    AddRemoveSearch(ContactBook book)
+    {
+        cb = book;
+    }
+
  //     Lägger till en ny person i listan    
     public void Add(String a, String b) {
         Person newPerson = new Person(); 
@@ -24,12 +29,17 @@ public class AddRemoveSearch {
     }
 // Vid sökning så öppnas en tom ArrayList som fylls på med namn/nummer som matchar sökningen
     public void Search (String a, String b) {
-        foundpeople = new ArrayList<Person>(); 
-        for (int i = 0; i < cb.p.size(); i++) {
-            if(cb.p.get(i).name==a || cb.p.get(i).number==b) {
+        foundpeople = new ArrayList<Person>();
+
+        for (int i = 0; i < cb.p.size(); i++) 
+        {
+            String temp = a + " " + b;
+            String temp2 = cb.p.get(i).name + " " + cb.p.get(i).number;
+
+            if(temp.matches(temp2))
+            {
                 foundpeople.add(cb.p.get(i));
             }
         }
     }
-     
 }
