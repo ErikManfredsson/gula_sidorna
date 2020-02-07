@@ -50,13 +50,13 @@ public void Remove(String a, String b) {
 
         String inputPerson = cb.p.get(i).fname + " " + cb.p.get(i).lname + " " + cb.p.get(i).number;
 
-        System.out.println(tempPerson + ":" + inputPerson);
-        System.out.println(tempPerson.length() + ":" + inputPerson.length());
+        //System.out.println(tempPerson + ":" + inputPerson);
+        //System.out.println(tempPerson.length() + ":" + inputPerson.length());
 
-        if(inputPerson.matches(".*" + tempPerson + ".*"))
+        if(inputPerson.matches(tempPerson))
         {
             cb.p.remove(i);
-            System.out.println("Removed Person");
+            System.out.println("Removed: " + tempPerson);
             
         }
     }

@@ -9,12 +9,12 @@ public class Main {
         book = ls.Load();
 
         AddRemoveSearch ars = new AddRemoveSearch(book);
-//        ars.Search("Simon", "");
-//        ars.Add("Simon Södergren", "0721641288");
+        ars.Search("Simon", "");
+        //ars.Add("Simon Södergren", "0721641288");
 
-        //for (int i = 0; i < ars.foundpeople.size(); i++) {
-        //    System.out.println("Found: "+ ars.foundpeople.get(i).fname + " " + ars.foundpeople.get(i).lname + " " + ars.foundpeople.get(i).number);
-        //}
+        for (int i = 0; i < ars.foundpeople.size(); i++) {
+            System.out.println("Found: "+ ars.foundpeople.get(i).fname + " " + ars.foundpeople.get(i).lname + " " + ars.foundpeople.get(i).number);
+        }
         ars.Remove("Simon Södergren", "0721641288");
 
         ls.Save(book);
