@@ -44,10 +44,20 @@ public void Remove(String a, String b) {
     person.fname = tempname[0];
     person.lname = tempname[1];
     person.number = b;
+    String tempPerson = person.fname + " " + person.lname + " " + person.number;
+
     for (int i = 0; i < cb.p.size(); i++) {
-        if(cb.p.get(i).fname == person.fname && cb.p.get(i).lname == person.lname && cb.p.get(i).number == person.number){
+
+        String inputPerson = cb.p.get(i).fname + " " + cb.p.get(i).lname + " " + cb.p.get(i).number;
+
+        System.out.println(tempPerson + ":" + inputPerson);
+        System.out.println(tempPerson.length() + ":" + inputPerson.length());
+
+        if(inputPerson.matches(".*" + tempPerson + ".*"))
+        {
             cb.p.remove(i);
-            System.out.println("removed person");
+            System.out.println("Removed Person");
+            
         }
     }
 }
