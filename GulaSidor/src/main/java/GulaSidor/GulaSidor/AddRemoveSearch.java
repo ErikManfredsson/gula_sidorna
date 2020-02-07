@@ -14,6 +14,13 @@ public class AddRemoveSearch {
 
  //     Lägger till en ny person i listan    
     public void Add(String a, String b) {
+        String[] tempname = {"", ""};        int tempcounter = 0;
+        for (int i = 0; i < a.length(); i++) {
+            if(a.charAt(i) == ' ')
+                tempcounter ++;
+            else
+                tempname[tempcounter] += a.charAt(i); 
+        }
         //Person newPerson = new Person(); 
         //newPerson.name=a;
         //newPerson.number=b; 
