@@ -8,8 +8,11 @@ public class Main {
         LoadSave ls = new LoadSave();
         book = ls.Load();
 
-        for (int i = 0; i < book.p.size(); i++) {
-            System.out.println(book.p.get(i).name + ": " + book.p.get(i).number);
+        AddRemoveSearch ars = new AddRemoveSearch(book);
+        ars.Search("Logan", "");
+
+        for (int i = 0; i < ars.foundpeople.size(); i++) {
+            System.out.println("Found: "+ ars.foundpeople.get(i).lname + " " + ars.foundpeople.get(i).number);
         }
     }
 }

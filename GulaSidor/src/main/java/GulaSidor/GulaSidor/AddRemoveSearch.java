@@ -33,12 +33,30 @@ public class AddRemoveSearch {
 
         for (int i = 0; i < cb.p.size(); i++) 
         {
-            String temp = a + " " + b;
-            String temp2 = cb.p.get(i).name + " " + cb.p.get(i).number;
-
-            if(temp.matches(temp2))
+            for (int j = 0; j < cb.p.size(); j++) 
             {
-                foundpeople.add(cb.p.get(i));
+                if(cb.p.get(i).fname.matches(".*" + a + ".*"))
+                {
+                    foundpeople.add(cb.p.get(i));
+                }
+
+                if(cb.p.get(i).lname.matches(".*" + a + ".*"))
+                {
+                    foundpeople.add(cb.p.get(i));
+                }
+
+                if(cb.p.get(i).number.matches(".*" + b + ".*"))
+                {
+                    foundpeople.add(cb.p.get(i));
+                }
+
+                String temp = a + " " + b;
+                String temp2 = cb.p.get(i).fname + " " + cb.p.get(i).lname + " " + cb.p.get(i).number;
+    
+                if(temp2.matches(".*" + temp + ".*"))
+                {
+                    foundpeople.add(cb.p.get(i));
+                }
             }
         }
     }

@@ -47,7 +47,11 @@ public class GUI {
 		textFieldNumber = new JTextField("Sök efter telefonnummer...");
 		
 		DefaultListModel <String> defaultListModel = new DefaultListModel<String>();
-		
+
+		for (int j = 0; j < cb.p.size(); j++) {
+			defaultListModel.addElement(cb.p.get(j).name + " " + cb.p.get(j).number); 
+		}
+
 		image = new ImageIcon("src\\main\\java\\GulaSidor\\GulaSidor\\eniro.jpg");
 		JLabel label = new JLabel("", image, JLabel.CENTER);
 		JPanel panel = new JPanel(new BorderLayout());
@@ -155,7 +159,7 @@ public class GUI {
 		public void actionPerformed(ActionEvent event) {
 			System.out.println("Du tryckte search");
 			ars.Search(textFieldName.getText() , textFieldNumber.getText());
-
+			
 			System.out.println(ars.foundpeople.size());
 
 			for (int i = 0; i < ars.foundpeople.size() ; i++) {
