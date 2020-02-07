@@ -37,7 +37,7 @@ public class GUI {
 		mainFrame = new JFrame("Contact Book");
 		mainFrame.setSize(600, 900);
 		mainFrame.setLayout(new FlowLayout());
-		textField = new JTextField();
+		textField = new JTextField("Sök efter namn, telefon...");
 		
 		DefaultListModel <String> defaultListModel = new DefaultListModel<String>();
 		defaultListModel.addElement("Erik 0768765118");
@@ -91,7 +91,7 @@ public class GUI {
 		list.setBounds(100, 100, 75, 75);
 		mainFrame.add(listScroller);
 		textField.setPreferredSize(new Dimension(450, 30));
-		textField.setBackground(new Color(255, 224, 1));
+//		textField.setBackground(new Color(255, 224, 1));
 		list.setBackground(new Color(255, 224, 1));
 		mainFrame.add(textField);
 		
@@ -152,10 +152,10 @@ public class GUI {
 		searchButton.setBackground(new Color(255, 224, 1));
 		removeButton.setBackground(new Color(255, 224, 1));
 
-		chooseButton.addActionListener(new ButtonClickListener());
-		addButton.addActionListener(new ButtonClickListener());
-		searchButton.addActionListener(new ButtonClickListener());
-		removeButton.addActionListener(new ButtonClickListener());
+//		chooseButton.addActionListener(new ButtonClickListener());
+//		addButton.addActionListener(new ButtonClickListener());
+//		searchButton.addActionListener(new ButtonClickListener());
+//		removeButton.addActionListener(new ButtonClickListener());
 
 		controlPanel.add(chooseButton);
 		controlPanel.add(addButton);
@@ -164,27 +164,32 @@ public class GUI {
 
 		mainFrame.setVisible(true);
 
-	}
+//	}
+//	final AddRemoveSearch ars = new AddRemoveSearch();
 
-	private class ButtonClickListener implements ActionListener {
-
-		AddRemoveSearch ars = new AddRemoveSearch();
-
-		public void actionPerformed(ActionEvent e) {
-
-			String command = e.getActionCommand();
-
-			if (command.equals("Choose")) {
-				statusLabel.setText("Du tryckte Choose");
-			} else if (command.equals("Add")) {
-				statusLabel.setText("Du tryckte Add");
-				statusLabel.setText(textField.getText());
-			} else if (command.equals("Search")) {
-				statusLabel.setText("Du tryckte Search");
-			} else if (command.equals("Remove")) {
-				statusLabel.setText("Du tryckte Remove");
-			}
+	chooseButton.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent event) {
+//			ars.Add(textField.getText(), textField.getText());
+			System.out.println("Du tryckte choose");
 		}
+	});
+	addButton.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent event) {
+			System.out.println("Du tryckte add");
+		}
+	});
+	searchButton.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent event) {
+			System.out.println("Du tryckte search");
+		}
+	});
+	removeButton.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent event) {
+			System.out.println("Du tryckte remove");
+		}
+	});
+
+
 	}
 
 	public static void main(String[] args) {
