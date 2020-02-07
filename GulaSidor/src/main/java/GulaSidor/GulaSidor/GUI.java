@@ -147,16 +147,16 @@ public class GUI {
 
 //	}
 //	final AddRemoveSearch ars = new AddRemoveSearch();
-		
-		textFieldName.addMouseListener(new MouseAdapter(){
-			public void mouseClicked(MouseEvent e){
-			    textFieldName.setText("");
+
+		textFieldName.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				textFieldName.setText("");
 			}
 		});
-		
-		textFieldNumber.addMouseListener(new MouseAdapter(){
-			public void mouseClicked(MouseEvent e){
-			    textFieldNumber.setText("");
+
+		textFieldNumber.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				textFieldNumber.setText("");
 			}
 		});
 
@@ -179,10 +179,6 @@ public class GUI {
 				System.out.println(ars.foundpeople.size());
 
 				for (int i = 0; i < ars.foundpeople.size(); i++) {
-					// defaultListModel.addElement(ars.foundpeople.get(i).name + " " +
-					// ars.foundpeople.get(i).number);
-					// System.out.println(ars.foundpeople.get(i).name + " " +
-					// ars.foundpeople.get(i).number);
 					System.out.println("hello world");
 				}
 			}
