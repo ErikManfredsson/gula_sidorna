@@ -64,33 +64,36 @@ public class AddRemoveSearch {
         foundpeople = new ArrayList<Person>();
         for (int i = 0; i < cb.p.size(); i++) 
         {            
-            if(!cb.p.contains(cb.p.get(i)))
-                if(a.length() > 0)
-                    if(cb.p.get(i).fname.matches(".*" + a + ".*"))                    
-                        foundpeople.add(cb.p.get(i));
-                    
-                    
-            if(!cb.p.contains(cb.p.get(i)))
-                if(a.length() > 0)
-                    if(cb.p.get(i).lname.matches(".*" + a + ".*"))                    
-                        foundpeople.add(cb.p.get(i));
-                    
+            if(a.length() > 0)
+                if(cb.p.get(i).fname.matches(".*" + a + ".*"))                    
+                    foundpeople.add(cb.p.get(i));
+                
+            if(a.length() > 0)
+                if(cb.p.get(i).lname.matches(".*" + a + ".*"))                    
+                    foundpeople.add(cb.p.get(i));
 
-            if(!cb.p.contains(cb.p.get(i)))
-                if(b.length() > 0)
-                    if(cb.p.get(i).number.matches(".*" + b + ".*"))                    
-                        foundpeople.add(cb.p.get(i));
+            if(b.length() > 0)
+                if(cb.p.get(i).number.matches(".*" + b + ".*"))                    
+                    foundpeople.add(cb.p.get(i));
                     
-
-            /*
+            
             String temp = a + " " + b;
             String temp2 = cb.p.get(i).fname + " " + cb.p.get(i).lname + " " + cb.p.get(i).number;
+            
             if(a != null)
             if(temp2.matches(".*" + temp + ".*"))
             {
                 foundpeople.add(cb.p.get(i));
             }
-            */
+
+            for (int j = 0; j < foundpeople.size(); j++) {
+                if(j > 0)
+                {
+                    if(foundpeople.get(j) == foundpeople.get(j - 1))
+                    foundpeople.remove(j);
+                }
+            }
+            
         }
     }
 }
