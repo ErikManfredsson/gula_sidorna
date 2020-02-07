@@ -26,7 +26,8 @@ public class GUI {
 	private JLabel statusLabel;
 	private JPanel controlPanel;
 	private DefaultListModel defaultListModel;
-	private JTextField textField;
+	private JTextField textFieldName;
+	private JTextField textFieldNumber;
 	private ImageIcon image;
 
 	public GUI() {
@@ -37,7 +38,8 @@ public class GUI {
 		mainFrame = new JFrame("Contact Book");
 		mainFrame.setSize(600, 900);
 		mainFrame.setLayout(new FlowLayout());
-		textField = new JTextField("Sök efter namn, telefon...");
+		textFieldName= new JTextField("Sök efter namn...");
+		textFieldNumber = new JTextField("Sök efter telefonnummer...");
 		
 		DefaultListModel <String> defaultListModel = new DefaultListModel<String>();
 		defaultListModel.addElement("Erik 0768765118");
@@ -90,10 +92,12 @@ public class GUI {
 		listScroller.setPreferredSize(new Dimension(450, 400));
 		list.setBounds(100, 100, 75, 75);
 		mainFrame.add(listScroller);
-		textField.setPreferredSize(new Dimension(450, 30));
+		textFieldName.setPreferredSize(new Dimension(225, 30));
+		textFieldNumber.setPreferredSize(new Dimension(225, 30));
 //		textField.setBackground(new Color(255, 224, 1));
 		list.setBackground(new Color(255, 224, 1));
-		mainFrame.add(textField);
+		mainFrame.add(textFieldName);
+		mainFrame.add(textFieldNumber);
 		
 		headerLabel = new JLabel("", JLabel.CENTER);
 		statusLabel = new JLabel("", JLabel.CENTER);
