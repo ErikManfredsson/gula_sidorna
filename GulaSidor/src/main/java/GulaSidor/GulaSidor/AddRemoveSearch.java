@@ -27,47 +27,55 @@ public class AddRemoveSearch {
         //cb.p.add(newPerson); 
     }
 //      Går igenom ArrayList och om det matchar namn eller nummer så raderas den 
-    public void Remove(String a, String b) {
-       // for (int i = 0; i < cb.p.size(); i++) {
-       //     if(cb.p.get(i).name==a || cb.p.get(i).number==b) {
-        //        cb.p.remove(i);
-      //      }
-      //  }
+public void Remove(String a, String b) {
+    String[] tempname = {"", ""};
+    int tempcounter = 0;
+    for (int i = 0; i < a.length(); i++) {
+        if(a.charAt(i) == ' ')
+            tempcounter ++;
+        else
+            tempname[tempcounter] += a.charAt(i); 
     }
-// Vid sökning så öppnas en tom ArrayList som fylls på med namn/nummer som matchar sökningen
-    public void Search (String a, String b) 
-    {
-        foundpeople = new ArrayList<Person>();
-
-        for (int i = 0; i < cb.p.size(); i++) 
-        {
-            if(a.length() > 0)
-            if(cb.p.get(i).fname.matches(".*" + a + ".*"))
-            {
-                foundpeople.add(cb.p.get(i));
-            }
-
-            if(a.length() > 0)
-            if(cb.p.get(i).lname.matches(".*" + a + ".*"))
-            {
-                foundpeople.add(cb.p.get(i));
-            }
-
-            if(b.length() > 0)
-            if(cb.p.get(i).number.matches(".*" + b + ".*"))
-            {
-                foundpeople.add(cb.p.get(i));
-            }
-
-            /*String temp = a + " " + b;
-            String temp2 = cb.p.get(i).fname + " " + cb.p.get(i).lname + " " + cb.p.get(i).number;
-
-            if(a != null)
-            if(temp2.matches(".*" + temp + ".*"))
-            {
-                foundpeople.add(cb.p.get(i));
-            }
-            */
+    Person person = new Person();
+    person.fname = tempname[0];
+    person.lname = tempname[1];
+    person.number = b;
+    for (int i = 0; i < cb.p.size(); i++) {
+        if(cb.p.get(i).fname == person.fname && cb.p.get(i).lname == person.lname && cb.p.get(i).number == person.number){
+            cb.p.remove(i);
+            System.out.println("removed person");
         }
     }
+}
+// Vid sökning så öppnas en tom ArrayList som fylls på med namn/nummer som matchar sökningen
+public void Search (String a, String b) 
+{
+    foundpeople = new ArrayList<Person>();
+    for (int i = 0; i < cb.p.size(); i++) 
+    {
+        if(a.length() > 0)
+        if(cb.p.get(i).fname.matches(".*" + a + ".*"))
+        {
+            foundpeople.add(cb.p.get(i));
+        }
+        if(a.length() > 0)
+        if(cb.p.get(i).lname.matches(".*" + a + ".*"))
+        {
+            foundpeople.add(cb.p.get(i));
+        }
+        if(b.length() > 0)
+        if(cb.p.get(i).number.matches(".*" + b + ".*"))
+        {
+            foundpeople.add(cb.p.get(i));
+        }
+        /*String temp = a + " " + b;
+        String temp2 = cb.p.get(i).fname + " " + cb.p.get(i).lname + " " + cb.p.get(i).number;
+        if(a != null)
+        if(temp2.matches(".*" + temp + ".*"))
+        {
+            foundpeople.add(cb.p.get(i));
+        }
+        */
+    }
+}
 }

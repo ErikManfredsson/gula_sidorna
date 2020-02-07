@@ -32,8 +32,7 @@ public class GUI {
 	private JTextField textFieldName;
 	private JTextField textFieldNumber;
 	private ImageIcon image;
-	private ContactBook cb = new ContactBook();
-	AddRemoveSearch ars = new AddRemoveSearch(cb);
+	ContactBook cb = new ContactBook();
 
 	public GUI() {
 
@@ -173,14 +172,16 @@ public class GUI {
 		});
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+
+				AddRemoveSearch ars = new AddRemoveSearch(cb);
+
 				System.out.println("Du tryckte search");
+				System.out.println(cb.p.size());
+
+
 				ars.Search(textFieldName.getText(), textFieldNumber.getText());
 
 				System.out.println(ars.foundpeople.size());
-
-				for (int i = 0; i < ars.foundpeople.size(); i++) {
-					System.out.println("hello world");
-				}
 			}
 		});
 		removeButton.addActionListener(new ActionListener() {
