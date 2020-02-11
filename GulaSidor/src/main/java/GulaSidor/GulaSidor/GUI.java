@@ -21,6 +21,9 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 public class GUI {
 
@@ -32,6 +35,8 @@ public class GUI {
 	private JTextField textFieldName;
 	private JTextField textFieldNumber;
 	private ImageIcon image;
+	private ListSelectionModel listSelectionModel;
+	
 	ContactBook cb = new ContactBook();
 
 	public GUI() {
@@ -82,7 +87,16 @@ public class GUI {
 		headerLabel = new JLabel("", JLabel.CENTER);
 		statusLabel = new JLabel("", JLabel.CENTER);
 		statusLabel.setSize(300, 300);
-
+		
+//Klick i listan -> textfield
+		listSelectionModel = list.getSelectionModel();
+		listSelectionModel.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent e) {
+				
+			}
+			
+		});
+		
 //	ImageIcon image = new ImageIcon("image/pic1.jpg");
 //	JLabel label = new JLabel("", image, JLabel.CENTER);
 //	JPanel panel = new JPanel(new BorderLayout());
