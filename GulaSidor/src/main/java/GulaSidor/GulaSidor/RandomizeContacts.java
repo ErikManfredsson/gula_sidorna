@@ -4,12 +4,18 @@ package GulaSidor.GulaSidor;
 import java.util.ArrayList;
 import java.util.Random;
 
+//Skriver en Randomize för att få fram olika kontakter
 public class RandomizeContacts {
+	//3 listor av Strängar förnamn, efternamn, nummer
+	//1 lista för att sedan spara personer
 	static ArrayList<String> fnamn = new ArrayList<String>();
 	static ArrayList<String> enamn = new ArrayList<String>();
 	static ArrayList<String> number = new ArrayList<String>();
 	static ArrayList<Person> person = new ArrayList<Person>();
 
+	//kallar på min RandomPeople function för att slumpa fram personer
+	//jag skapar en ny contactbook för att spara det sedan till Json
+	//sen använder jag LoadSave scriptet för att spara personerna till min Json
 	public static void main(String[] args) {
 		RandomPeople(person);
 		LoadSave ls = new LoadSave();
