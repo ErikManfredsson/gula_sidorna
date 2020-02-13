@@ -1,6 +1,7 @@
 package GulaSidor.GulaSidor;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,14 +15,22 @@ public class AddRemoveSearchTest {
 	
 	@Test 
 	public void testFindPerson() throws IndexOutOfBoundsException {
+		LoadSave ls = new LoadSave();
+		contactBook = ls.Load();
 		Person p2 = new Person(); 
-		p2.name="Simon Södergren"; 
+		p2.fname="Simon";
+		p2.lname="Södergren";
 		p2.number="0721641288"; 
-		AddRemoveSearch ars1 = new AddRemoveSearch();
-		ars1.foundpeople.add(p2);
+		AddRemoveSearch ars1 = new AddRemoveSearch(contactBook);
 		ars1.Search("Simon Södergren", "0721641288");
-		System.out.println(ars1.foundpeople.get(0));
-		assertEquals(ars1.foundpeople.get(0), p2);
+		System.out.println(ars1.foundpeople.get(0).number);
+		//assertEquals(ars1.foundpeople.get(0), p2);
+		for (int i = 0; i < ars1.foundpeople.size(); i++) {				
+				if(ars1.foundpeople.get(i).fname == p2.fname &&
+					ars1.foundpeople.get(i).lname == p2.lname && 
+					ars1.foundpeople.get(i).number == p2.number )
+						assertTrue(true);
+		}
 	}
 	
 //	@Test
